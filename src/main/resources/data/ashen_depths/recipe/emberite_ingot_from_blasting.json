@@ -1,0 +1,11 @@
+{
+	"type": "minecraft:blasting",
+	"category": "misc",
+	"ingredient": "ashen_depths:raw_emberite",
+	"result": {
+		"id": "ashen_depths:emberite_ingot",
+		"count": 1
+	},
+	"experience": 1.0,
+	"cookingtime": 100
+}

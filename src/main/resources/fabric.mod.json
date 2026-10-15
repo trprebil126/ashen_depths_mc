@@ -1,0 +1,21 @@
+{
+	"schemaVersion": 1,
+	"id": "ashen_depths",
+	"version": "${version}",
+	"name": "Ashen Depths",
+	"description": "Explore a volcanic dimension filled with dangerous creatures and ancient treasure.",
+	"authors": [],
+	"license": "All-Rights-Reserved",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.ashendepths.AshenDepths"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"key": {
+		"I": "ashen_depths:emberite_ingot"
+	},
+	"pattern": [
+		"III",
+		"III",
+		"III"
+	],
+	"result": {
+		"id": "ashen_depths:emberite_block",
+		"count": 1
+	}
+}

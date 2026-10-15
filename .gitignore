@@ -1,0 +1,15 @@
+.gradle/
+build/
+out/
+classes/
+.idea/
+*.iml
+.vscode/
+bin/
+.classpath
+.project
+run/
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
