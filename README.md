@@ -4,7 +4,7 @@ Ashen Depths is a Fabric mod for Minecraft 26.3. It adds Emberite ore and a basa
 
 ## Emberite
 
-Emberite ore generates in basalt-delta biomes. Mining it drops Raw Emberite, which can be smelted or blasted into Emberite Ingots. Nine ingots craft a Block of Emberite, and the block can be crafted back into nine ingots.
+Emberite ore generates in deepslate in Overworld biomes, following vanilla diamond ore's depth and placement patterns. It does not generate in the Ashen Depths dimension. Mining it drops Raw Emberite, which can be smelted or blasted into Emberite Ingots. Nine ingots craft a Block of Emberite, and the block can be crafted back into nine ingots.
 
 ## Portal
 

@@ -2,18 +2,19 @@ package com.ashendepths;
 
 import java.util.function.Function;
 
-import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -29,6 +30,7 @@ public final class ModContent {
 			BlockBehaviour.Properties.ofFullCopy(Blocks.NETHER_GOLD_ORE)
 					.mapColor(MapColor.COLOR_BLACK)
 					.strength(3.0F, 6.0F)
+					.lightLevel(state -> 6)
 					.requiresCorrectToolForDrops()
 	);
 
@@ -53,25 +55,40 @@ public final class ModContent {
 	public static final Item RAW_EMBERITE = registerItem("raw_emberite", Item::new, new Item.Properties());
 	public static final Item EMBERITE_INGOT = registerItem("emberite_ingot", Item::new, new Item.Properties());
 
+	public static final ResourceKey<CreativeModeTab> CREATIVE_TAB_KEY = ResourceKey.create(
+			BuiltInRegistries.CREATIVE_MODE_TAB.key(),
+			AshenDepths.id("creative_tab")
+	);
+	public static final CreativeModeTab CREATIVE_TAB = FabricCreativeModeTab.builder()
+			.icon(() -> new ItemStack(EMBERITE_INGOT))
+			.title(Component.translatable("itemGroup.ashen_depths"))
+			.displayItems((parameters, output) -> {
+				output.accept(EMBERITE_ORE);
+				output.accept(EMBERITE_BLOCK);
+				output.accept(RAW_EMBERITE);
+				output.accept(EMBERITE_INGOT);
+			})
+			.build();
+
 	private ModContent() {
 	}
 
 	public static void initialize() {
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(entries -> {
-			entries.accept(RAW_EMBERITE);
-			entries.accept(EMBERITE_INGOT);
-		});
-		CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> {
-			entries.accept(EMBERITE_ORE);
-			entries.accept(EMBERITE_BLOCK);
-		});
-		ResourceKey<PlacedFeature> emberiteOreFeature =
-				ResourceKey.create(Registries.PLACED_FEATURE, AshenDepths.id("emberite_ore"));
-		BiomeModifications.addFeature(
-				BiomeSelectors.includeByKey(Biomes.BASALT_DELTAS),
-				GenerationStep.Decoration.UNDERGROUND_ORES,
-				emberiteOreFeature
-		);
+		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, CREATIVE_TAB_KEY, CREATIVE_TAB);
+		for (String featureName : new String[]{
+				"emberite_ore",
+				"emberite_ore_medium",
+				"emberite_ore_large",
+				"emberite_ore_buried"
+		}) {
+			ResourceKey<PlacedFeature> feature =
+					ResourceKey.create(Registries.PLACED_FEATURE, AshenDepths.id(featureName));
+			BiomeModifications.addFeature(
+					BiomeSelectors.foundInOverworld(),
+					GenerationStep.Decoration.UNDERGROUND_ORES,
+					feature
+			);
+		}
 		EmberitePortalBlock.registerActivationEvent();
 	}
 
