@@ -1,10 +1,10 @@
 {
 	"variants": {
 		"axis=x": {
-			"model": "minecraft:block/nether_portal_ns"
+			"model": "ashen_depths:block/emberite_portal_ns"
 		},
 		"axis=z": {
-			"model": "minecraft:block/nether_portal_ew"
+			"model": "ashen_depths:block/emberite_portal_ew"
 		}
 	}
 }

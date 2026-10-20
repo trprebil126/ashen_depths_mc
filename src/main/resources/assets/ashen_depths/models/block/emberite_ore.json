@@ -1,6 +1,6 @@
 {
 	"parent": "minecraft:block/cube_all",
 	"textures": {
-		"all": "minecraft:block/nether_gold_ore"
+		"all": "ashen_depths:block/deepslate_emberite_ore"
 	}
 }
