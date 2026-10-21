@@ -42,6 +42,15 @@ public final class ModContent {
 					.sound(SoundType.NETHERITE_BLOCK)
 	);
 
+	public static final Block ASH_BLOCK = registerBlock(
+			"ash_block",
+			Block::new,
+			BlockBehaviour.Properties.ofFullCopy(Blocks.BASALT)
+					.mapColor(MapColor.COLOR_GRAY)
+					.sound(SoundType.SAND)
+					.strength(0.6F)
+	);
+
 	public static final Block EMBERITE_PORTAL = registerBlockWithoutItem(
 			"emberite_portal",
 			EmberitePortalBlock::new,
@@ -65,6 +74,7 @@ public final class ModContent {
 			.displayItems((parameters, output) -> {
 				output.accept(EMBERITE_ORE);
 				output.accept(EMBERITE_BLOCK);
+				output.accept(ASH_BLOCK);
 				output.accept(RAW_EMBERITE);
 				output.accept(EMBERITE_INGOT);
 			})

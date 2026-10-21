@@ -1,6 +1,6 @@
 # Ashen Depths
 
-Ashen Depths is a Fabric mod for Minecraft 26.3. It adds Emberite ore and a basalt-delta dimension that can be reached through a custom portal.
+Ashen Depths is a Fabric mod for Minecraft 26.3. It adds Emberite ore and an ash-covered mountain dimension that can be reached through a custom portal.
 
 ## Emberite
 
@@ -21,3 +21,7 @@ Install JDK 25 and run this from the project folder:
 ```
 
 The mod jar is written to `build\libs\ashen-depths-1.0.0.jar`. Install it with Fabric Loader 0.19.5 or newer and Fabric API for Minecraft 26.3.
+
+## Ashen Depths dimension
+
+An open-sky world of Ash Block surfaces over blackstone and basalt, with hills and mountains, lava lowlands and drifting white ash particles.

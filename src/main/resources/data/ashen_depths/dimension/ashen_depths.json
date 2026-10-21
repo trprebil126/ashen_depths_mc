@@ -1,11 +1,11 @@
 {
-	"type": "minecraft:the_nether",
+	"type": "ashen_depths:ashen_depths",
 	"generator": {
 		"type": "minecraft:noise",
-		"settings": "minecraft:nether",
+		"settings": "ashen_depths:ashen_depths",
 		"biome_source": {
 			"type": "minecraft:fixed",
-			"biome": "minecraft:basalt_deltas"
+			"biome": "ashen_depths:ashen_mountains"
 		}
 	}
 }

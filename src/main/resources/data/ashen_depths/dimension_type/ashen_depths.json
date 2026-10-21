@@ -1,0 +1,36 @@
+{
+	"ambient_light": 0.05,
+	"attributes": {
+		"minecraft:audio/ambient_sounds": {
+			"mood": {
+				"block_search_extent": 8,
+				"offset": 2.0,
+				"sound": "minecraft:ambient.basalt_deltas.mood",
+				"tick_delay": 6000
+			}
+		},
+		"minecraft:gameplay/nether_portal_spawns_piglin": false,
+		"minecraft:gameplay/respawn_anchor_works": true,
+		"minecraft:visual/ambient_light_color": "#1a1816",
+		"minecraft:visual/cloud_color": "#99555555",
+		"minecraft:visual/cloud_height": 220.33,
+		"minecraft:visual/fog_color": "#4a4440",
+		"minecraft:visual/sky_color": "#2e2a2a"
+	},
+	"coordinate_scale": 8.0,
+	"default_clock": "minecraft:overworld",
+	"has_ceiling": false,
+	"has_ender_dragon_fight": false,
+	"has_skylight": true,
+	"height": 384,
+	"infiniburn": "#minecraft:infiniburn_overworld",
+	"logical_height": 384,
+	"min_y": -64,
+	"monster_spawn_block_light_limit": 0,
+	"monster_spawn_light_level": {
+		"type": "minecraft:uniform",
+		"max_inclusive": 7,
+		"min_inclusive": 0
+	},
+	"timelines": "#minecraft:in_overworld"
+}
